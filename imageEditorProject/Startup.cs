@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,10 +13,19 @@ using imageEditorProject.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+
+//todo: databae auth, look for, roles admin
+//todo corousel mosaicos init and form responsive home, look for
+//try to do all asynchronous, respect to code
+//try to upgrate to netcore 2.2
+//add library or web api?
+//
+
 namespace imageEditorProject
 {
     public class Startup
     {
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;

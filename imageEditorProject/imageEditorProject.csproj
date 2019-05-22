@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+
     <UserSecretsId>aspnet-imageEditorProject-8D3DFCF7-AC7D-4FEB-A4FD-117D201967CE</UserSecretsId>
   </PropertyGroup>
 

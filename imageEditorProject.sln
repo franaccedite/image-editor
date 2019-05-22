@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mvcImageEditor", "mvcImageEditor\mvcImageEditor.csproj", "{17B0D95E-E83B-422E-B02B-140B6F2F069E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImagePyLibrary", "TestLibrary\ImagePyLibrary.csproj", "{FA03D0FB-7D77-4FBF-8482-3E739D39D4FE}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17B0D95E-E83B-422E-B02B-140B6F2F069E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17B0D95E-E83B-422E-B02B-140B6F2F069E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17B0D95E-E83B-422E-B02B-140B6F2F069E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17B0D95E-E83B-422E-B02B-140B6F2F069E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA03D0FB-7D77-4FBF-8482-3E739D39D4FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA03D0FB-7D77-4FBF-8482-3E739D39D4FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA03D0FB-7D77-4FBF-8482-3E739D39D4FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA03D0FB-7D77-4FBF-8482-3E739D39D4FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
