@@ -48,6 +48,7 @@ namespace mvcImageEditor.Controllers
 
 
             string newImagePath = "";
+            //string scriptPath = @"C:\Users\LENOVO\source\repos\imageEditorProject\TestLibrary\Scripts\transparenceFusionImageScript.py";
             string tracePythonScript = ImageProcessingMethods.ExecuteTransparenceFusionScript(frontFileFinalPath, backFileFinalPath);
             //string tracePythonScript = @" hsrtwte e       jertyejtkjrtuy   C:\Users\LENOVO\source\repos\imageEditorProject\mvcImageEditor\wwwroot\uploads\created\aaa.png";
 

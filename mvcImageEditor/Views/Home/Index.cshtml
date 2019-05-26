@@ -2,37 +2,34 @@
     ViewData["Title"] = "Home Page";
 }
 
-@*TODO ERROR CARROUSEL LIBRARY JQUERY*@
-
+@*header section*@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
     <p>Merge and create images easly<a href="https://docs.microsoft.com/aspnet/core"></a>.</p>
-
 </div>
 
 
 
+
+@*slick js and css*@
 <script src="~/css/slick/slick/jquery.min.slick.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="~/css/slick/slick/slick.css" />
+<link rel="stylesheet" type="text/css" href="~/css/slick/slick/slick-theme.css" />
+<script type="text/javascript" src="~/css/slick/slick/slick.min.js"></script>
 
-
-
+@*bootstrap js and css*@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 
 
-<link rel="stylesheet" type="text/css" href="~/css/slick/slick/slick.css" />
-<link rel="stylesheet" type="text/css" href="~/css/slick/slick/slick-theme.css" />
-
-
+@*styles*@
 <style>
 
     navbar-nav {
         margin-left: 1%;
     }
 
-    #buttonMoreText{
-
+    #buttonMoreText {
     }
 
     #buttonMoreInfo {
@@ -76,6 +73,8 @@
         outline: none
     }
 </style>
+
+@*carrousel section*@
 <div class="col-sm-12" style="background-color:gray;">
     <div class="slider  your-class" style="padding-top: 1%;">
         <div><img style="margin:auto" ; src="http://placehold.it/200x200" /></div>
@@ -89,85 +88,8 @@
     </div>
 </div>
 
-<br />
-<br />
-
-
-
-<div class="col-sm-12 form-group text-center"
-<section id="cover">
-    <div id="cover-caption" style="display: flex;" >
-        <div id="container" class="container">
-            <div class="row text-dark" style="margin-top: 2%;" >
-                <div class="col-sm-6 offset-sm-3 text-center">
-                    <div class="info-form">
-
-@{ Html.BeginForm("CreateImageRequest", "Home", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-inlin justify-content-center" }); }
-                        <div class="form-group">
-                            <label>Background image</label>
-                            <input class="filestyle" type="file" id="BackFileUpload" name="BackFileUpload" />
-@*<label class="text-secondary" id="fileUpload1Name"></label>*@
-                        </div>
-
-                        <div class="form-group">
-                            <label>Front image</label>
-                            <input class="filestyle" type="file" id="FrontFileUpload" name="FrontFileUpload"/>
-@*<label class="text-secondary" id="fileUpload2Name"></label>*@
-                        </div>
-
-                        <input class="btn btn-success " type="submit" value="Enviar" />
-
-
-@{ Html.EndForm(); }
-
-
-                    </div>
-@*class="btn btn-outline-secondary btn-sm"*@
-@*href="#nav-main"*@
-@*<a class="js__popup" role="button">*@
-
-                    <button id="buttonMoreInfo" class="btn btn-outline-secondary btn-sm js__popup" onclick="openPopUp();">
-                       More
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-    </div>
-
-<!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
-@*<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>*@
-<script type="text/javascript" src="~/css/slick/slick/slick.min.js"></script>
-
-
-@*<script>
-        $('#fileUpload1').on('change', function () {
-            //get the file name
-            var fileName = $(this).val();
-
-            var initIndex = fileName.lastIndexOf("\\") + 1;
-
-            fileName = fileName.substring(initIndex);
-
-            $('#fileUpload1Name').html(fileName);
-        })
-        $('#fileUpload2').on('change', function () {
-            //get the file name
-            var fileName = $(this).val();
-
-
-            var initIndex = fileName.lastIndexOf("\\") + 1;
-
-            fileName = fileName.substring(initIndex);
-            $('#fileUpload2Name').html(fileName);
-        })
-    </script>*@
-
 
 <script type="text/javascript">
-
-
     var jquery_min_slick = $.noConflict(true);
 
     jquery_min_slick(document).ready(function () {
@@ -209,6 +131,124 @@
     });
 </script>
 
+
+<br />
+<br />
+
+
+@*form section*@
+
+
+@*js style file buttons file*@
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="~/bootstrap-filestyle-2.1.0/src/bootstrap-filestyle.min.js"></script>
+
+
+<div class="col-sm-12 form-group text-center">
+    <section id="cover">
+        <div id="cover-caption" style="display: flex;">
+            <div id="container" class="container">
+                <div class="row text-dark" style="margin-top: 2%;">
+                    <div class="col-sm-6 offset-sm-3 text-center">
+                        <div class="info-form">
+
+                            @{ Html.BeginForm("CreateImageRequest", "Home", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-inlin justify-content-center" }); }
+                            <div class="form-group">
+                                <label>Background image</label>
+                                <input class="filestyle" type="file" id="BackFileUpload" name="BackFileUpload" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Front image</label>
+                                <input class="filestyle" type="file" id="FrontFileUpload" name="FrontFileUpload" />
+                            </div>
+
+                            <input class="btn btn-success " id="submitForm" type="submit" value="Enviar" />
+                            @{ Html.EndForm(); }
+                        </div>
+                        <button id="buttonMoreInfo" class="btn btn-outline-secondary btn-sm js__popup" onclick="openPopUp();">
+                            More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
+@*validation form*@
+<script>
+
+    $('#submitForm').click(function () {
+        var inputTextList = $('input[type=text]');
+
+        var backInput = inputTextList[0].value;
+        var frontInput = inputTextList[1].value;
+
+        var isValid = backInput != "" && frontInput != "";
+        if (!isValid) {
+            alert('Please choose files');
+        }
+
+        return isValid;
+
+    })
+
+    $(function () {
+        $('input[type=file]').change(function () {
+            var val = $(this).val().toLowerCase(),
+                regex = new RegExp("(.*?)\.(gif|png|jpg)$");
+
+
+            var inputTextList = $('input[type=text]');
+            var attrId = this.getAttribute("id");
+
+
+            if (!(regex.test(val))) {
+
+                if (attrId == "BackFileUpload") {
+                    inputTextList[0].setAttribute("style", "font-size: 0;")
+                }
+                else {
+                    inputTextList[1].setAttribute("style", "font-size: 0;")
+                }
+
+
+                alert('Please select correct file format');
+            }
+            else {
+                if (attrId == "BackFileUpload") {
+                    inputTextList[0].setAttribute("style", "font-size: 14;")
+                }
+                else {
+                    inputTextList[1].setAttribute("style", "font-size: 14;")
+                }
+            }
+        });
+    });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @*pop up*@
 <link rel="stylesheet" href="~/popup/jquery.popup.css" />
 
@@ -237,6 +277,7 @@
 
 </script>
 
+@*popup button more*@
 <script src="~/popup/jquery.popup.js"></script>
 
 <script>
@@ -291,37 +332,5 @@
 </script>
 
 
-@*style file*@
-<script type="text/javascript" src="~/bootstrap-filestyle-2.1.0/src/bootstrap-filestyle.min.js"></script>
 
 
-<script>
-
-    $(function () {
-        $('input[type=file]').change(function () {
-            var val = $(this).val().toLowerCase(),
-                regex = new RegExp("(.*?)\.(gif|png|jpg)$");
-
-            if (!(regex.test(val))) {
-                $(this).val('');
-                alert('Please select correct file format');
-                //ajax alert
-            }
-        });
-    });
-
-    function isValid() {
-
-        var extensionsList = ['.jpg', '.gif', '.png'];
-        var frontFileName = document.getElementById("");
-        var backFileName = document.getElementById("");
-
-
-        return hasExtension(frontFileName, extensionsList) && hasExtension(backFileName, extensionsList)
-    }
-
-    function hasExtension(inputID, exts) {
-        var fileName = document.getElementById(inputID).value;
-        return (new RegExp('(' + exts.join('|').replace(/\./g, '\\.') + ')$')).test(fileName);
-    }
-</script>
