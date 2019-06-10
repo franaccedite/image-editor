@@ -77,19 +77,29 @@
 @*carrousel section*@
 <div class="col-sm-12" style="background-color:gray;">
     <div class="slider  your-class" style="padding-top: 1%;">
-        <div><img style="margin:auto" ; src="http://placehold.it/200x200" /></div>
-        <div><img style="margin:auto" class="img-fluid" src="http://placehold.it/200x200" /></div>
-        <div><img style="margin:auto" class="img-fluid" src="http://placehold.it/200x200" /></div>
-        <div><img style="margin:auto" class="img-fluid" src="http://placehold.it/200x200" /></div>
-        <div><img style="margin:auto" class="img-fluid" src="http://placehold.it/200x200" /></div>
-        <div><img style="margin:auto" class="img-fluid" src="http://placehold.it/200x200" /></div>
-        <div><img style="margin:auto" class="img-fluid" src="http://placehold.it/200x200" /></div>
+        @*<div><img style="margin:auto" ; src="http://placehold.it/200x200" /></div>*@
+        <div><img ondblclick="popUpImageCarrousel()" style="margin:auto;width: 200px;height: 200px;" class="img-fluid" src="~/carrouselImages/graf1.jpg" /></div>
+        <div><img style="margin:auto;width: 200px;height: 200px;" class="img-fluid" src="~/carrouselImages/searchtools 10.jpg" /></div>
+        <div><img style="margin:auto;width: 200px;height: 200px;" class="img-fluid" src="~/carrouselImages/graf15.jpg" /></div>
+        <div><img style="margin:auto;width: 200px;height: 200px;" class="img-fluid" src="~/carrouselImages/searchtools 14.jpg" /></div>
+        <div><img style="margin:auto;width: 200px;height: 200px;" class="img-fluid" src="~/carrouselImages/graf6.jpg" /></div>
+        <div><img style="margin:auto;width: 200px;height: 200px;" class="img-fluid" src="~/carrouselImages/searchtools 3.jpg" /></div>
 
     </div>
 </div>
 
 
 <script type="text/javascript">
+
+    function popUpImageCarrousel() {
+        //get src Image
+        //show image popup
+    }
+
+
+
+
+
     var jquery_min_slick = $.noConflict(true);
 
     jquery_min_slick(document).ready(function () {
@@ -163,9 +173,15 @@
                                 <input class="filestyle" type="file" id="FrontFileUpload" name="FrontFileUpload" />
                             </div>
 
+                            <input class="filestyle" id="submitPrivacy" type="checkbox">j
+
                             <input class="btn btn-success " id="submitForm" type="submit" value="Enviar" />
                             @{ Html.EndForm(); }
                         </div>
+
+                        
+
+
                         <button id="buttonMoreInfo" class="btn btn-outline-secondary btn-sm js__popup" onclick="openPopUp();">
                             More
                         </button>

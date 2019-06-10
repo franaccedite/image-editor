@@ -42,23 +42,40 @@ namespace mvcImageEditor
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+
+
+
+
             services.AddAuthentication()
                 .AddGoogle(googleOptions =>
                 {
-                    googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
-                    googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+                    //googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
+                    //googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+
+                    googleOptions.ClientId = Configuration["apiKeys:googleClientId"];
+                    googleOptions.ClientSecret = Configuration["apiKeys:googleClientSecret"];
+
                 })
 
                 .AddFacebook(facebookOptions =>
                 {
-                    facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
-                    facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+                    //facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+                    //facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+
+                    facebookOptions.AppId = Configuration["apiKeys:facebookApiId"];
+                    facebookOptions.AppSecret = Configuration["apiKeys:facebookApiSecret"];
+
                 })
 
                 .AddInstagram(instagramOptions =>
                 {
-                    instagramOptions.ClientId = Configuration["Authentication:Instagram:ClientId"];
-                    instagramOptions.ClientSecret = Configuration["Authentication:Instagram:ClientSecret"];
+                    //instagramOptions.ClientId = Configuration["Authentication:Instagram:ClientId"];
+                    //instagramOptions.ClientSecret = Configuration["Authentication:Instagram:ClientSecret"];
+
+                    instagramOptions.ClientId = Configuration["apiKeys:instagramClientId"];
+                    instagramOptions.ClientSecret = Configuration["apiKeys:instagramClientSecret"];
+
+
                 })
             ;
 
